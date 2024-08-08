@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { getRandomNumber } from "./uitilis";
 
-function PlayerRegistration({ setStart, players, setPlyers}) {
+function PlayerRegistration({ setStart, players, setPlyers }) {
   const [namePlayer, setNamePlayer] = useState("");
-
   const addPlyer = () => {
     let newPlyer = {
       name: namePlayer,
@@ -16,15 +15,16 @@ function PlayerRegistration({ setStart, players, setPlyers}) {
     setPlyers((prevPlayers) => {
       const updatedPlayers = [...prevPlayers, newPlyer];
       localStorage.setItem("players", JSON.stringify(updatedPlayers));
+      setNamePlayer("");
       return updatedPlayers;
     });
-    setNamePlayer("");
   };
 
   return (
     <div>
       <input
         type="text"
+        value={namePlayer}
         minLength={3}
         onChange={(e) => {
           setNamePlayer(e.target.value);
@@ -38,7 +38,7 @@ function PlayerRegistration({ setStart, players, setPlyers}) {
           ))}
         </ul>
       </div>
-      <button onClick={()=>setStart(true)}>start game</button>
+      <button onClick={() => setStart(true)}>start game</button>
     </div>
   );
 }
