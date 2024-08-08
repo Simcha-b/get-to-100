@@ -1,23 +1,23 @@
 import React, {useState} from 'react';
 import PlayerBoard from './PlayerBoard';
 
-function GameBoard({ players }) {
+function GameBoard({ players }) {  
   const [currentPlayer, setCurrentPlayer] = useState(0);
   const clickAction = (action) => {
     const newPlayers = [...players];
     const player = newPlayers[currentPlayer];
     switch (action) {
       case '+1':
-        player.score += 1;
+        player.number += 1;
         break;
       case '-1':
-        player.score -= 1;
+        player.number -= 1;
         break;
       case '*2':
-        player.score *= 2;
+        player.number *= 2;
         break;
       case '/2':
-        player.score = Math.floor(player.score / 2);
+        player.number = Math.floor(player.number / 2);
         break;
       default:
         break;

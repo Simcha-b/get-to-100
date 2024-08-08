@@ -6,7 +6,7 @@ function PlayerBoard({ player, isActive, onAction }) {
       <h2>Gamer =={'>'} {player.name} {isActive ? '||| ENABLED' : '||| disabled'}</h2>
       <p>Number =={'>'} {player.number}</p>
       <p>Steps =={'>'} {player.steps}</p>
-      <p>Steps =={'>'} {player.steps}</p>
+   
 
       {isActive && (
         <div>
