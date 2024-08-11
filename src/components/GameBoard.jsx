@@ -5,6 +5,7 @@ function GameBoard({ players }) {
   const [currentPlayer, setCurrentPlayer] = useState(0);
   const clickAction = (action) => {
     const newPlayers = [...players];
+    
     const player = newPlayers[currentPlayer];
     switch (action) {
       case '+1':
