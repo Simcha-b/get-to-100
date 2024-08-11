@@ -7,7 +7,7 @@ function PlayerRegistration({ setStart, players, setPlyers }) {
     let newPlyer = {
       name: namePlayer,
       number: getRandomNumber(),
-      steps: 0,
+      // steps: 0,
       score: 0,
       state: true,
     };
