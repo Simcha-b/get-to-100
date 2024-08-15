@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PlayerRegistration from "./PlayerRegistration";
 import GameBoard from "./GameBoard";
-
+import BigThree from "./BigThree";
 function ManageGame() {
   const [players, setPlyers] = useState([]);
   const [start, setStart] = useState(false);
@@ -17,6 +17,7 @@ function ManageGame() {
         />
       )}
       {start && <GameBoard players={players} />}
+      {start&&<BigThree className="big-three"/>}
     </div>
   );
 }

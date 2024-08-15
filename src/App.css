@@ -1,70 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* עיצוב גוף הדף */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F8F9FA;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  h1 {
-    color: #343A40;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  input {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #CED4DA;
-    border-radius: 4px;
-  }
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: #0056B3;
-  }
-  .player-registration {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .player-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  .player-list li {
-    padding: 5px;
-    border-bottom: 1px solid #CED4DA;
-  }
-  .game-board {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .player-board {
-    border: 1px solid #CED4DA;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 10px;
-    width: 250px;
-    background-color: white;
-    text-align: center;
-  }
-  .player-board.active {
-    border-color: #DC3545;
-  }
-  .player-board h2 {
-    font-size: 18px;
-    margin: 0 0 10px 0;
-  }
-  .player-board p {
-    margin: 5px 0;
-  }
-  .player-board button {
-    margin: 5px;
-  }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+/* עיצוב כותרות */
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* עיצוב טפסים */
+form {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #f1f1f1;
+}
+
+form input {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border: 2px solid #b3c6ff;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+form input:focus {
+  border-color: #80aaff;
+}
+
+/* עיצוב כפתורים */
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056B3;
+  transform: translateY(-2px);
+}
+
+/* עיצוב מיוחד לכפתור ההתחלה */
+.start-game-button {
+  background-color: #00c853;
+}
+
+.start-game-button:hover {
+  background-color: #00a152;
+}
+
+/* עיצוב לרשימת שחקנים */
+.plyaerlist ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.plyaerlist li {
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #b3c6ff;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* עיצוב ללוח המשחק */
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.player-board {
+  border: 3px solid #CED4DA;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+  width: 250px;
+  background-color: white;
+  color: #343A40;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.player-board.active {
+  border-color: #35dc59;
+  box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
+}
+
+.player-board p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.player-board button {
+  margin: 5px;
+}
+
+/* עיצוב לרשימת שלושת המובילים */
+.big-three {
+  margin-top: 20px;
+}
+
+.big-three ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.big-three li {
+  padding: 10px;
+  background-color: rgba(0, 123, 255, 0.2);
+  border: 2px solid #007BFF;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
